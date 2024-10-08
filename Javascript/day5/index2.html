@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>While Loop Example</title>
+</head>
+<body>
+    <h2>While Loop Output:</h2>
+    <ul id="whileLoopOutput"></ul>
+
+    <script>
+        const output = document.getElementById("whileLoopOutput");
+        let i = 1;
+
+        while (i <= 5) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `Number: ${i}`;
+            output.appendChild(listItem);
+            i++;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+DECLEAR variable datatypes AND Operators
+
+Arithmetic Operators: Perform mathematical operations like addition (+), subtraction (-), multiplication (*), and division (/) on numbers.
+
+Comparison Operators: Compare values using loose equality (==), which compares only the value, and strict equality (===), which compares both value and type.
+
+Logical Operators: Use && (AND) to check if both conditions are true, || (OR) to check if at least one condition is true, and ! (NOT) to reverse the boolean result of a condition.
+
+Assignment Operators: Combine arithmetic with assignment, like adding (+=), subtracting (-=), multiplying (*=), and dividing (/=), while updating the value of a variable.

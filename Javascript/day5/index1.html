@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Loop Example</title>
+</head>
+<body>
+    <h2>For Loop Output:</h2>
+    <ul id="forLoopOutput"></ul>
+
+    <script>
+        const output = document.getElementById("forLoopOutput");
+
+        for (let i = 1; i <= 5; i++) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `Number: ${i}`;
+            output.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+Auth	
+
+--------------------------------------------------------------------------------------------
+
+POST	/api/auth/register/user	Register a new user	registerValidation, validateRequest
+POST	/api/auth/register/vendor	Register a new vendor	registerValidation, validateRequest
+POST	/api/auth/register/admin	Register a new admin	registerValidation, validateRequest
+POST	/api/auth/verify-otp	Verify OTP for registration	None
+POST	/api/auth/login/user	User login	loginValidation, validateRequest
+POST	/api/auth/login/vendor	Vendor login	loginValidation, validateRequest
+POST	/api/auth/login/admin	Admin login	loginValidation, validateRequest
+
+Product	
+
+-----------------------------------------------------------------------------------------------------------
+
+POST /api/product/	
+
+
+Create a new product (with multiple images)	verifyToken, authMiddleware, roleMiddleware
+
+-----------------------------------------------------------------------------------------------------------
+
+GET	/api/product/	Get all products	None
+GET	/api/product/:id	Get a product by ID	None
+PUT	/api/product/:id	Update a product by ID (with image uploads)	verifyToken, authMiddleware, roleMiddleware
+DELETE	/api/product/:id	Delete a product by ID	verifyToken, authMiddleware, roleMiddleware
+POST	/api/product/:id/rate	Add a rating to a product	verifyToken, authMiddleware, roleMiddleware
+
+
+Seller	
+
+-------------------------------------------------------------------------------------------------------
+
+POST	/api/seller/register	Register a user as a seller	verifyToken, authMiddleware, roleMiddleware
+GET	/api/seller/:sellerId	Get seller details by ID	verifyToken, authMiddleware, roleMiddleware
+PUT	/api/seller/:sellerId	Update seller profile	verifyToken, authMiddleware, roleMiddleware
+POST	/api/seller/add-product	  Add a product to sellers store	verifyToken, authMiddleware, roleMiddleware
+POST	/api/seller/transaction	Handle wallet transactions for seller	verifyToken, authMiddleware, roleMiddleware
+
+
+Category
+
+--------------------------------------------------------------------------------------------------------
+
+POST	/api/category/	Create a new category	verifyToken, authMiddleware, roleMiddleware
+GET	/api/category/	Get all categories	None
+GET	/api/category/:id	Get a category by ID	None
+PUT	/api/category/:id	Update a category by ID	verifyToken, authMiddleware, roleMiddleware
+DELETE	/api/category/:id	Delete a category by ID	verifyToken, authMiddleware, roleMiddleware
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+project-root/
+├── controllers/
+│   ├── authController.js
+│   ├── productController.js
+│   └── sellerController.js
+├── middlewares/
+│   ├── authMiddleware.js
+│   ├── errorHandler.js
+│   ├── roleMiddleware.js
+│   └── verifyToken.js
+├── models/
+│   ├── adminModel.js
+│   ├── categoryModel.js
+│   ├── productModel.js
+│   ├── sellerModel.js
+│   ├── userModel.js
+│   ├── vendorModel.js
+│   └── walletModel.js
+├── nodemailer/
+│   └── nodeMailer.js
+├── routers/
+│   ├── authRoutes.js
+│   ├── productRoutes.js
+│   └── sellerRoutes.js
+├── utils/
+│   ├── sendEmail.js
+│   └── uploadOnCloudinary.js
+├── validators/
+│   └── authValidator.js
+├── uploads/
+│   └── [Uploaded files will be stored here temporarily]
+├── logs/
+│   ├── combined.log
+│   └── error.log
+├── .env
+├── package.json
+└── server.js

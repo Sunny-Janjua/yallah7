@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal JS with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Adding Tailwind CSS CDN -->
+</head>
+<body class="bg-gray-100 p-6">
+
+    <form name="selectForm" class="space-y-4 max-w-lg mx-auto p-6 bg-white rounded shadow-lg">
+        <label for="musicTypes" class="block text-lg font-semibold text-gray-700">
+          Choose some music types, then click the button below:
+        </label>
+        <select id="musicTypes" name="musicTypes" multiple class="w-full p-2 border rounded-md shadow-sm">
+          <option selected>R&B</option>
+          <option>Jazz</option>
+          <option>Blues</option>
+          <option>New Age</option>
+          <option>Classical</option>
+          <option>Opera</option>
+        </select>
+
+        <button id="btn" type="button" onclick="onclickhandler()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+            How many are selected?
+        </button>
+
+        <p id="output" class="text-green-600 font-medium"></p> <!-- Placeholder for showing selected count -->
+    </form>
+
+    <script>
+        function onclickhandler() {
+            let count = 0;
+            let options = document.getElementById("musicTypes").options;
+            
+            // For loop to count selected options
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    count++;
+                }
+            }
+            
+            // Display the result in the output paragraph
+            document.getElementById("output").textContent = `You have selected ${count} option(s).`;
+        }
+    </script>
+</body>
+</html>
