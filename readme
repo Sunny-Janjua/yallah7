@@ -1,0 +1,55 @@
+Authentication:
+
+POST /api/auth/register/user: Register a new user.
+POST /api/auth/register/vendor: Register a new vendor.
+POST /api/auth/register/admin: Register a new admin.
+POST /api/auth/verify-otp: Verify OTP.
+POST /api/auth/login/user: Log in a user.
+POST /api/auth/login/vendor: Log in a vendor.
+POST /api/auth/login/admin: Log in an admin.
+
+
+Admin:
+
+GET /api/admin/users: Get all users.
+PUT /api/admin/vendors/manage: Manage vendors.
+GET /api/admin/analytics: View analytics.
+DELETE /api/admin/users/:userId: Delete a user by ID.
+DELETE /api/admin/vendors/:vendorId: Delete a vendor by ID.
+
+
+
+Cart:
+
+GET /api/cart: Get all items in cart.
+POST /api/cart: Add an item to the cart.
+DELETE /api/cart/:itemId: Remove an item from the cart by ID.
+DELETE /api/cart: Clear all items from the cart.
+
+
+
+Products:
+
+GET /api/products: Get all products.
+GET /api/products/:productId: Get a product by ID.
+POST /api/products: Create a new product.
+PUT /api/products/:productId: Update a product by ID.
+DELETE /api/products/:productId: Delete a product by ID.
+
+
+
+Sellers:
+
+POST /api/sellers/register: Register as a seller.
+GET /api/sellers/:sellerId: Get seller details by ID.
+PUT /api/sellers/:sellerId: Update seller profile.
+POST /api/sellers/add-product: Add product to seller's store.
+POST /api/sellers/transaction: Handle wallet transactions.
+
+
+
+Users:
+
+GET /api/users/profile: Get user profile.
+PUT /api/users/profile: Update user profile.
+DELETE /api/users/profile: Delete user account.
